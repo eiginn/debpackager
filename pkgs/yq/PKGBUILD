@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname=yq
+pkgver=4.16.1
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='yq is a portable command-line YAML processor'
+license=('MIT')
+ghrepo='mikefarah/yq'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/yq_linux_amd64.tar.gz")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}
