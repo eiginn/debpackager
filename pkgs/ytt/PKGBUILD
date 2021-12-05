@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='ytt'
+pkgver=0.38.0
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='YAML templating tool that works on YAML structure instead of text'
+license=('Apache License 2.0')
+ghrepo='vmware-tanzu/carvel-ytt'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/ytt-linux-amd64")
+noextract=("ytt-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}-linux-amd64" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

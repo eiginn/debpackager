@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='dasel'
+pkgver=1.22.1
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Select, put and delete data from JSON, TOML, YAML, XML and CSV files with a single tool. Supports conversion between formats and can be used as a Go package.'
+license=('MIT License')
+ghrepo='TomWright/dasel'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/dasel_linux_amd64")
+noextract=("dasel_linux_amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='arduino-cli'
+pkgver=0.20.1
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Arduino command line tool'
+license=('GNU General Public License v3.0')
+ghrepo='arduino/arduino-cli'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/${pkgver}/arduino-cli_${pkgver}_Linux_64bit.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

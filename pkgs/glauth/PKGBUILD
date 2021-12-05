@@ -1,0 +1,22 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='glauth'
+pkgver=2.0.0
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='A lightweight LDAP server for development, home use, or CI'
+license=('MIT License')
+ghrepo='glauth/glauth'
+url="https://github.com/${ghrepo}"
+
+# WHY!?
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/glauth64")
+noextract=("glauth64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "glauth64" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

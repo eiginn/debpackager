@@ -1,0 +1,22 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='nerdctl'
+pkgver=0.14.0
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='contaiNERD CTL - Docker-compatible CLI for containerd, with support for Compose, Rootless, eStargz, OCIcrypt, IPFS, ...'
+license=('Apache License 2.0')
+ghrepo='containerd/nerdctl'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/${pkgname}-${pkgver}-linux-amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 755 "containerd-rootless.sh" "${pkgdir}/usr/share/${pkgname}/containerd-rootless.sh"
+  install -Dm 755 "containerd-rootless-setuptool.sh" "${pkgdir}/usr/share/${pkgname}/containerd-rootless-setuptool.sh"
+}
