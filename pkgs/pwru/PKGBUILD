@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='pwru'
+pkgver=0.0.2
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Packet, where are you? -- Linux kernel networking debugger'
+license=('GNU General Public License v2.0')
+ghrepo='cilium/pwru'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/pwru")
+noextract=("pwru")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}
