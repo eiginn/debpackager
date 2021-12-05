@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='{{ (ds "repo").name }}'
+pkgver={{ (ds "repo").latestRelease.tagName | strings.TrimPrefix "v" }}
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='{{ (ds "repo").description }}'
+license=('{{ (ds "repo").licenseInfo.name }}')
+ghrepo='{{ (ds "repo").owner.login }}/{{ (ds "repo").name }}'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/{{ if (ds "repo").latestRelease.tagName | strings.HasPrefix "v" }}v{{ end }}${pkgver}/FILLMEIN")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  #install -Dm 755 "${pkgname}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

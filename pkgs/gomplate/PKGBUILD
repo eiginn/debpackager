@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='gomplate'
+pkgver=3.10.0
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='A flexible commandline tool for template rendering. Supports lots of local and remote datasources.'
+license=('MIT License')
+ghrepo='hairyhenderson/gomplate'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/gomplate_linux-amd64")
+noextract=("gomplate_linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}_linux-amd64" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}
