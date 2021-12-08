@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='ipftrace2'
+pkgver=0.4.1
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='A packet oriented Linux kernel function call tracer'
+license=('Other')
+ghrepo='YutaroHayakawa/ipftrace2'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/ipftrace2_amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "ipft" "${pkgdir}/usr/bin/ipft"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='virtctl'
+pkgver=0.48.0
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Kubernetes Virtualization API and runtime in order to define and manage virtual machines.'
+license=('Apache License 2.0')
+ghrepo='kubevirt/kubevirt'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/virtctl-v${pkgver}-linux-amd64")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "virtctl-v${pkgver}-linux-amd64" "${pkgdir}/usr/bin/virtctl"
+}
