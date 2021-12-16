@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='tilt'
+pkgver=0.23.3
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Define your dev environment as code. For microservice apps on Kubernetes.'
+license=('Apache License 2.0')
+ghrepo='tilt-dev/tilt'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/tilt.${pkgver}.linux.x86_64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "tilt" "${pkgdir}/usr/bin/tilt"
+}
