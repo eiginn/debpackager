@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='virtctl'
-pkgver=0.48.0
+pkgver=0.48.1
 pkgrel=1
 arch=('x86_64')
 depends=()
