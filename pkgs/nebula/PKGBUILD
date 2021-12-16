@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='nebula'
+pkgver=1.5.2
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='A scalable overlay networking tool with a focus on performance, simplicity and security'
+license=('MIT License')
+ghrepo='slackhq/nebula'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/nebula-linux-amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "nebula" "${pkgdir}/usr/bin/nebula"
+  install -Dm 755 "nebula-cert" "${pkgdir}/usr/bin/nebula-cert"
+}
