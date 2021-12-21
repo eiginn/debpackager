@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='yaegi'
+pkgver=0.11.2
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Yaegi is Another Elegant Go Interpreter'
+license=('Apache License 2.0')
+ghrepo='traefik/yaegi'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/yaegi_v${pkgver}_linux_amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

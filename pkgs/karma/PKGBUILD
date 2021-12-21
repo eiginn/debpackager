@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='karma'
+pkgver=0.94
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Alert dashboard for Prometheus Alertmanager'
+license=('Apache License 2.0')
+ghrepo='prymitive/karma'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/karma-linux-amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "karma-linux-amd64" "${pkgdir}/usr/bin/karma"
+}

@@ -1,0 +1,22 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='sqldef'
+pkgver=0.11.15
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Idempotent MySQL/PostgreSQL schema management by SQL'
+license=('Other')
+ghrepo='k0kubun/sqldef'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/psqldef_linux_amd64.tar.gz"
+        "https://github.com/${ghrepo}/releases/download/v${pkgver}/sqlite3def_linux_amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP' 'SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "psqldef" "${pkgdir}/usr/bin/psqldef"
+  install -Dm 755 "sqlite3def" "${pkgdir}/usr/bin/sqlite3def"
+}
