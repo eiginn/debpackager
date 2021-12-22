@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='lua-language-server'
+pkgver=2.5.5
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Lua Language Server coded by Lua'
+license=('MIT License')
+ghrepo='sumneko/lua-language-server'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/${pkgver}/lua-language-server-${pkgver}-linux-x64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "bin/lua-language-server" "${pkgdir}/usr/bin/lua-language-server"
+}
