@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='shfmt'
+pkgver=3.4.2
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='A shell parser, formatter, and interpreter with bash support; includes shfmt'
+license=('BSD 3-Clause "New" or "Revised" License')
+ghrepo='mvdan/sh'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/shfmt_v${pkgver}_linux_amd64")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "shfmt_v${pkgver}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
+}
