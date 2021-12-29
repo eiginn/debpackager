@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='dyff'
+pkgver=1.4.6
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='/ˈdʏf/ - diff tool for YAML files, and sometimes JSON'
+license=('MIT License')
+ghrepo='homeport/dyff'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/dyff_${pkgver}_linux_amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}
