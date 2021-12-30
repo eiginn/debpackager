@@ -9,12 +9,21 @@ license=('Apache License 2.0')
 ghrepo='coredns/coredns'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/coredns_${pkgver}_linux_amd64.tgz")
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/coredns_${pkgver}_linux_amd64.tgz"
+        "https://github.com/coredns/coredns/archive/refs/tags/v${pkgver}.tar.gz")
 #noextract=("binary-linux-amd64")
-sha256sums=('SKIP')
+sha256sums=('SKIP' 'SKIP')
 
 options=('!strip')
 
+#get_man_pages() {
+#  gh api repos/coredns/coredns/contents/man\?ref=v1.8.6 | jq '.[]|.name'
+#}
+
 package() {
   install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  for section in 1 5 7; do
+    mkdir -p "${pkgdir}/usr/share/man/man${section}"
+    install -Dm 644 coredns-${pkgver}/man/*.${section} "${pkgdir}/usr/share/man/man${section}/"
+  done
 }
