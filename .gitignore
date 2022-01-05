@@ -2,3 +2,4 @@
 *.tar.gz
 pkgs/*/pkg/*
 pkgs/*/src/*
+.task

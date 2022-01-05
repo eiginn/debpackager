@@ -3,10 +3,104 @@
 version: '3'
 
 vars:
-  GREETING: Hello, World!
+  PKGS:
+    sh: find . -name PKGBUILD -exec dirname {} \;
 
 tasks:
-  default:
+
+  checknew:
+    desc: Check for outdated versions
+    dir: pkgs
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - bash ./check_update.sh
+
+  pkgtasklist:
+    cmds:
+      - |
+        for i in $(find . -name PKGBUILD -exec dirname {} \; | xargs -n1 basename | sort -V); do
+          echo '      - task: buildpkg'
+          echo '        vars: {PKG: "'"$i"'"}'
+        done
+
+  buildpkg:
+    label: build-{{.PKG}}
+    sources:
+      - pkgs/{{.PKG}}/PKGBUILD
+    generates:
+      - pkgs/{{.PKG}}/*.deb
+    cmds:
+      - |
+        (
+          cd ./pkgs/{{.PKG}}
+          makedeb
+        )
+
+  buildall:
+    desc: Build all packages
+    cmds:
+      - task: buildpkg
+        vars: {PKG: "age"}
+      - task: buildpkg
+        vars: {PKG: "arduino-cli"}
+      - task: buildpkg
+        vars: {PKG: "certigo"}
+      - task: buildpkg
+        vars: {PKG: "cf-terraforming"}
+      - task: buildpkg
+        vars: {PKG: "cloudquery"}
+      - task: buildpkg
+        vars: {PKG: "coredns"}
+      - task: buildpkg
+        vars: {PKG: "dasel"}
+      - task: buildpkg
+        vars: {PKG: "dry"}
+      - task: buildpkg
+        vars: {PKG: "dyff"}
+      - task: buildpkg
+        vars: {PKG: "fq"}
+      - task: buildpkg
+        vars: {PKG: "glauth"}
+      - task: buildpkg
+        vars: {PKG: "gobgp"}
+      - task: buildpkg
+        vars: {PKG: "gomplate"}
+      - task: buildpkg
+        vars: {PKG: "ipftrace2"}
+      - task: buildpkg
+        vars: {PKG: "karma"}
+      - task: buildpkg
+        vars: {PKG: "kubevirt"}
+      - task: buildpkg
+        vars: {PKG: "lua-language-server"}
+      - task: buildpkg
+        vars: {PKG: "nebula"}
+      - task: buildpkg
+        vars: {PKG: "nerdctl"}
+      - task: buildpkg
+        vars: {PKG: "pint"}
+      - task: buildpkg
+        vars: {PKG: "pwru"}
+      - task: buildpkg
+        vars: {PKG: "shfmt"}
+      - task: buildpkg
+        vars: {PKG: "sn-cli"}
+      - task: buildpkg
+        vars: {PKG: "sqldef"}
+      - task: buildpkg
+        vars: {PKG: "tilt"}
+      - task: buildpkg
+        vars: {PKG: "yaegi"}
+      - task: buildpkg
+        vars: {PKG: "yq"}
+      - task: buildpkg
+        vars: {PKG: "ytt"}
+
+  clean:
+    desc: Clean all but deb files
+    cmds:
+      - git clean -f -d -x -e '*.deb'
+
+  cleanall:
+    desc: Clean everything incl deb files
+    cmds:
+      - git clean -f -d -x
