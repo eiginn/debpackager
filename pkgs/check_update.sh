@@ -14,7 +14,7 @@ for pkgbuild in $(find "$SCRIPT_DIR" -maxdepth 2 -name PKGBUILD); do
     if [[ $_check_rc_prerelease == true ]]; then
       rc_prerelease_filter=''
     else
-      rc_prerelease_filter='| select(.tag_name | test(".*rc.*"; "i") | not)'
+      rc_prerelease_filter='| select(.tag_name | test(".*(rc|beta).*"; "i") | not)'
     fi
     latestver="$(gh api "repos/${ghrepo}/releases" | jq -r '[.[] '"${rc_prerelease_filter}"' | .tag_name] | .[0]')"
     if ! [[ $latestver ]]; then
