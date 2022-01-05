@@ -1,0 +1,23 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='netmaker'
+pkgver=0.9.2
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Netmaker makes networks with WireGuard. Netmaker automates fast, secure, and distributed virtual networks.'
+license=('Other')
+ghrepo='gravitl/netmaker'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/netclient"
+        "https://github.com/${ghrepo}/releases/download/v${pkgver}/netmaker"
+      )
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP' 'SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "netclient" "${pkgdir}/usr/bin/netclient"
+  install -Dm 755 "netmaker" "${pkgdir}/usr/bin/netmaker"
+}
