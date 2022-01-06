@@ -44,3 +44,14 @@ tasks:
     desc: Clean everything incl deb files
     cmds:
       - git clean -f -d -x -e '.task/*'
+
+  uploadall:
+    desc: Upload all found packages into gcloud
+    cmds:
+      - |
+        find . -type f -name '*.deb' -print0 | xargs -0 -n1 bash pkgs/upload_pkg.sh
+
+  upload:
+    desc: Upload single package
+    cmds:
+      - bash pkgs/upload_pkg.sh {{.CLI_ARGS}}
