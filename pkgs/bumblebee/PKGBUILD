@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='bumblebee'
+pkgver=0.0.9
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='Get eBPF programs running from the cloud to the kernel in 1 line of bash'
+license=('Apache License 2.0')
+ghrepo='solo-io/bumblebee'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/bee-linux-amd64")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "bee-linux-amd64" "${pkgdir}/usr/bin/bee"
+}
