@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='isopod'
+pkgver=1.8.6
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='An expressive DSL and framework for Kubernetes configuration without YAML'
+license=('Apache License 2.0')
+ghrepo='cruise-automation/isopod'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/isopod-linux")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}-linux" "${pkgdir}/usr/bin/${pkgname}"
+}
