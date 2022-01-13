@@ -1,6 +1,11 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# shut up undefined varibles warning in shellcheck:
+pkgver=
+pkgname=
+ghrepo=
+_check_rc_prerelease=
 
 die() {
   echo "$@" >&2
@@ -24,6 +29,9 @@ for pkgbuild in $(find "$SCRIPT_DIR" -maxdepth 2 -name PKGBUILD); do
     fi
     if [[ $pkgver != "${latestver#v}" ]]; then
       echo "$pkgname is out of date. Newest: ${latestver#v} Have: $pkgver"
+      if ! [[ $(git status --porcelain -- "$pkgbuild") ]]; then
+        sed -i -e "s/pkgver=${pkgver}/pkgver=${latestver#v}/" "$pkgbuild"
+      fi
     fi
     popd &> /dev/null || exit 1
   )
