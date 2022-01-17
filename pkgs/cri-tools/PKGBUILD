@@ -1,0 +1,22 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='cri-tools'
+pkgver=1.23.0
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='CLI and validation tools for Kubelet Container Runtime Interface (CRI) .'
+license=('Apache License 2.0')
+ghrepo='kubernetes-sigs/cri-tools'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/crictl-v${pkgver}-linux-amd64.tar.gz"
+        "https://github.com/${ghrepo}/releases/download/v${pkgver}/critest-v${pkgver}-linux-amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP' 'SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "crictl" "${pkgdir}/usr/bin/crictl"
+  install -Dm 755 "crictl" "${pkgdir}/usr/bin/critest"
+}
