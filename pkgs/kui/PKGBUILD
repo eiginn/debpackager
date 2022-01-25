@@ -1,0 +1,22 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='kui'
+pkgver=11.1.1
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='A hybrid command-line/UI development experience for cloud-native development'
+license=('Apache License 2.0')
+ghrepo='kubernetes-sigs/kui'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/Kui-linux-x64.zip")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  #install -Dm 755 "${pkgname}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
+  #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+  true
+}

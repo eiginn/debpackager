@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='pwru'
-pkgver=0.0.2
+pkgver=0.0.3
 pkgrel=1
 arch=('x86_64')
 depends=()
@@ -9,8 +9,7 @@ license=('GNU General Public License v2.0')
 ghrepo='cilium/pwru'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/pwru")
-noextract=("pwru")
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/pwru-linux-amd64.tar.gz")
 sha256sums=('SKIP')
 
 options=('!strip')
