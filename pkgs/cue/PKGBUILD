@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='cue'
+pkgver=0.4.1
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='The new home of the CUE language! Validate and define text-based and dynamic configuration'
+license=('Apache License 2.0')
+ghrepo='cue-lang/cue'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/cue_v${pkgver}_linux_amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

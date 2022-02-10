@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='cloudquery'
-pkgver=0.20.1
+pkgver=0.20.3
 pkgrel=1
 arch=('x86_64')
 depends=()

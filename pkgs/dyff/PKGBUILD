@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='dyff'
-pkgver=1.4.7
+pkgver=1.5.1
 pkgrel=1
 arch=('x86_64')
 depends=()
