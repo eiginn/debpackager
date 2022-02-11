@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='cloudprober'
+pkgver=0.11.4
+pkgrel=1
+arch=('x86_64')
+depends=()
+pkgdesc='An active monitoring software to detect failures before your customers do.'
+license=('Apache License 2.0')
+ghrepo='cloudprober/cloudprober'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/cloudprober-v${pkgver}-linux-x86_64.zip")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "cloudprober-v${pkgver}-linux-x86_64/cloudprober" "${pkgdir}/usr/bin/cloudprober"
+}
