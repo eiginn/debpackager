@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname=sn-cli
-pkgver=0.2.0
+pkgver=0.2.1
 pkgrel=1
 arch=('x86_64')
 depends=()
