@@ -35,6 +35,16 @@ tasks:
           task buildpkg "PKG=$i"
         done
 
+  buildnew:
+    desc: Build all packages
+    cmds:
+      - |
+        for i in {{.PKGS | catLines}}; do
+          if [[ -e pkgs/$i/.needs_build ]]; then
+            task buildpkg "PKG=$i"
+          fi
+        done
+
   clean:
     desc: Clean all but deb files
     cmds:

@@ -32,6 +32,7 @@ for pkgbuild in $(find "$SCRIPT_DIR" -maxdepth 2 -name PKGBUILD); do
       if ! [[ $(git status --porcelain -- "$pkgbuild") ]]; then
         sed -i -e "s/pkgver=${pkgver}/pkgver=${latestver#v}/" "$pkgbuild"
       fi
+      touch "$(dirname "$pkgbuild")/.needs_build"
     fi
     popd &> /dev/null || exit 1
   )
