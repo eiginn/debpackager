@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname=gobgp
-pkgver=2.34.0
+pkgver=3.0.0
 pkgrel=1
 arch=('x86_64')
 depends=()

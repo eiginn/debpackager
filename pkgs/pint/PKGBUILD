@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='pint'
-pkgver=0.11.1
+pkgver=0.13.1
 pkgrel=1
 arch=('x86_64')
 depends=()
@@ -9,20 +9,11 @@ license=('Apache License 2.0')
 ghrepo='cloudflare/pint'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/pint-${pkgver}-Linux-x86_64.tar.gz"
-  "https://github.com/${ghrepo}/releases/download/v${pkgver}/config.hcl"
-  "https://github.com/${ghrepo}/releases/download/v${pkgver}/simple.hcl"
-  "https://github.com/${ghrepo}/releases/download/v${pkgver}/CONFIGURATION.md"
-  "https://github.com/${ghrepo}/releases/download/v${pkgver}/README.md")
-#noextract=("binary-linux-amd64")
-sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' )
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/pint-${pkgver}-Linux-x86_64.tar.gz")
+sha256sums=('SKIP')
 
 options=('!strip')
 
 package() {
   install -Dm 755 "${pkgname}-linux-amd64" "${pkgdir}/usr/bin/${pkgname}"
-  install -Dm 644 "config.hcl" "${pkgdir}/usr/share/doc/pint/examples/config.hcl"
-  install -Dm 644 "simple.hcl" "${pkgdir}/usr/share/doc/pint/examples/simple.hcl"
-  install -Dm 644 "CONFIGURATION.md" "${pkgdir}/usr/share/doc/pint/CONFIGURATION.md"
-  install -Dm 644 "README.md" "${pkgdir}/usr/share/doc/pint/README.md"
 }
