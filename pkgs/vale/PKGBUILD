@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='vale'
-pkgver=2.15.2
+pkgver=2.15.3
 pkgrel=1
 arch=('x86_64')
 depends=()

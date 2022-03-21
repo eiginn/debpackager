@@ -10,6 +10,7 @@ check_existing() {
 }
 
 (
+  echo "Uploading: ${file}..."
   if ! check_existing; then
     gcloud beta artifacts apt upload any --location=us-west1 --source="${file}"
   fi

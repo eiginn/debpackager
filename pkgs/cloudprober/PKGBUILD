@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='cloudprober'
-pkgver=0.11.4
+pkgver=0.11.6
 pkgrel=1
 arch=('x86_64')
 depends=()

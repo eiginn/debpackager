@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='sqldef'
-pkgver=0.11.39
+pkgver=0.11.45
 pkgrel=1
 arch=('x86_64')
 depends=()
