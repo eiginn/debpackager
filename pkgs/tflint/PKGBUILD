@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='tflint'
-pkgver=0.34.1
+pkgver=0.35.0
 pkgrel=1
 arch=('x86_64')
 depends=()
