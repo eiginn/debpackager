@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='vgrep'
-pkgver=2.6.0
+pkgver=2.5.6
 pkgrel=1
 arch=('x86_64')
 depends=()
@@ -9,12 +9,14 @@ license=('GNU General Public License v3.0')
 ghrepo='vrothberg/vgrep'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/vgrep_${pkgver}_Linux_x86_64")
-#noextract=("binary-linux-amd64")
+source=("https://github.com/${ghrepo}/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('SKIP')
 
 options=('!strip')
 
 package() {
-  install -Dm 755 "vgrep_${pkgver}_Linux_x86_64" "${pkgdir}/usr/bin/vgrep"
+  #install -Dm 755 "vgrep_${pkgver}_Linux_x86_64" "${pkgdir}/usr/bin/vgrep"
+  cd "vgrep-${pkgver}"
+  make release
+  make PREFIX="${pkgdir}/usr/local" install
 }
