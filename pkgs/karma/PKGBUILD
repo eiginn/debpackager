@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='karma'
-pkgver=0.101
+pkgver=0.103
 pkgrel=1
 arch=('x86_64')
 depends=()
