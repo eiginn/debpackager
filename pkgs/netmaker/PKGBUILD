@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='netmaker'
-pkgver=0.12.2
+pkgver=0.13.0
 pkgrel=1
 arch=('x86_64')
 depends=()
