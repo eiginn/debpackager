@@ -3,4 +3,5 @@
 *.zip
 pkgs/*/pkg/*
 pkgs/*/src/*
+pkgs/*/.needs_build
 .task
