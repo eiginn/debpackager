@@ -48,12 +48,12 @@ tasks:
   clean:
     desc: Clean all but deb files
     cmds:
-      - git clean -f -d -x -e '*.deb' -e '.task/*'
+      - git clean -f -f -d -x -e '*.deb' -e '.task/*'
 
   cleanall:
     desc: Clean everything incl deb files
     cmds:
-      - git clean -f -d -x -e '.task/*'
+      - git clean -f -f -d -x -e '.task/*'
 
   uploadall:
     desc: Upload all found packages into gcloud
