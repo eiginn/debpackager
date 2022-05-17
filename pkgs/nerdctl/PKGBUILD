@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='nerdctl'
-pkgver=0.19.0
+pkgver=0.20.0
 pkgrel=1
 arch=('x86_64')
 depends=()
