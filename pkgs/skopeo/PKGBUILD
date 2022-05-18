@@ -1,0 +1,34 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname=skopeo
+pkgver=1.8.0
+pkgrel=1
+pkgdesc="A command line utility for various operations on container images and image repositories (git)"
+arch=('any')
+depends=()
+makedepends=(go libgpgme-dev libassuan-dev libbtrfs-dev libdevmapper-dev pkg-config)
+provides=("$pkgname")
+conflicts=("$pkgname")
+ghrepo='containers/skopeo'
+url="https://github.com/${ghrepo}"
+license=(Apache)
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+build() {
+  export BUILDTAGS='seccomp apparmor'
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath"
+
+  cd $pkgname || exit 1
+  make EXTRA_LDFLAGS='-s -w -linkmode=external'
+}
+
+package() {
+  cd $pkgname || exit 1
+  make install DESTDIR="$pkgdir" PREFIX=/usr
+  # remove stuff from podman pkg
+  [[ $pkgdir ]] && rm -rvf "${pkgdir}/etc"
+}
