@@ -9,8 +9,9 @@ license=('MIT License')
 ghrepo='traefik/traefik'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/traefik_v${pkgver}_linux_amd64.tar.gz")
-sha256sums=('SKIP')
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/traefik_v${pkgver}_linux_amd64.tar.gz"
+        "./traefik.service")
+sha256sums=('SKIP' 'SKIP')
 
 options=('!strip')
 

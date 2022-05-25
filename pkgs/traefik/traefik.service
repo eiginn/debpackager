@@ -34,8 +34,5 @@ ProtectControlGroups=true
 ReadWritePaths=/etc/traefik/acme.json
 # depending on log and entrypoint configuration, you may need to allow writing to other paths, too
 
-# limit number of processes in this unit
-LimitNPROC=1
-
 [Install]
 WantedBy=multi-user.target
