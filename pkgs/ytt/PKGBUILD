@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='ytt'
-pkgver=0.40.1
+pkgver=0.41.1
 pkgrel=1
 arch=('x86_64')
 depends=()
