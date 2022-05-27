@@ -2,7 +2,7 @@
 pkgname='shfmt'
 pkgver=3.5.0
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='A shell parser, formatter, and interpreter with bash support; includes shfmt'
 license=('BSD 3-Clause "New" or "Revised" License')

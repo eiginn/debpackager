@@ -2,7 +2,7 @@
 pkgname='tflint'
 pkgver=0.36.2
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='A Pluggable Terraform Linter'
 license=('Mozilla Public License 2.0')

@@ -2,7 +2,7 @@
 pkgname=yq
 pkgver=4.25.1
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='yq is a portable command-line YAML processor'
 license=('MIT')

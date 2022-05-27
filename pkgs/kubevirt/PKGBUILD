@@ -2,7 +2,7 @@
 pkgname='virtctl'
 pkgver=0.53.1
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Kubernetes Virtualization API and runtime in order to define and manage virtual machines.'
 license=('Apache License 2.0')

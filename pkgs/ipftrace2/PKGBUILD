@@ -2,7 +2,7 @@
 pkgname='ipftrace2'
 pkgver=0.5.1
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='A packet oriented Linux kernel function call tracer'
 license=('Other')

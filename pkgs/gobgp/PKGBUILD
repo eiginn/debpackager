@@ -2,7 +2,7 @@
 pkgname=gobgp
 pkgver=3.2.0
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='BGP implemented in the Go Programming Language'
 license=('Apache-2.0')

@@ -2,7 +2,7 @@
 pkgname='ytt'
 pkgver=0.41.1
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='YAML templating tool that works on YAML structure instead of text'
 license=('Apache License 2.0')

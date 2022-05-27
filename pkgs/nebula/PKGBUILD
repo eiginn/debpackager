@@ -2,7 +2,7 @@
 pkgname='nebula'
 pkgver=1.5.2
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='A scalable overlay networking tool with a focus on performance, simplicity and security'
 license=('MIT License')

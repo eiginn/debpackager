@@ -2,7 +2,7 @@
 pkgname='bumblebee'
 pkgver=0.0.11
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Get eBPF programs running from the cloud to the kernel in 1 line of bash'
 license=('Apache License 2.0')

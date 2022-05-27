@@ -2,7 +2,7 @@
 pkgname='vgrep'
 pkgver=2.5.6
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='vgrep - a user-friendly pager for grep'
 license=('GNU General Public License v3.0')

@@ -2,7 +2,7 @@
 pkgname='miller'
 pkgver=6.2.0
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON'
 license=('Other')

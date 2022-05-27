@@ -2,7 +2,7 @@
 pkgname='isopod'
 pkgver=1.8.6
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='An expressive DSL and framework for Kubernetes configuration without YAML'
 license=('Apache License 2.0')

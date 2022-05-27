@@ -2,7 +2,7 @@
 pkgname='karma'
 pkgver=0.103
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Alert dashboard for Prometheus Alertmanager'
 license=('Apache License 2.0')

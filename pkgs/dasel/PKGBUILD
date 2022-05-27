@@ -2,7 +2,7 @@
 pkgname='dasel'
 pkgver=1.24.3
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Select, put and delete data from JSON, TOML, YAML, XML and CSV files with a single tool. Supports conversion between formats and can be used as a Go package.'
 license=('MIT License')

@@ -2,7 +2,7 @@
 pkgname='lua-language-server'
 pkgver=3.2.4
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Lua Language Server coded by Lua'
 license=('MIT License')

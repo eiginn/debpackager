@@ -2,7 +2,7 @@
 pkgname='glauth'
 pkgver=2.1.0
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='A lightweight LDAP server for development, home use, or CI'
 license=('MIT License')

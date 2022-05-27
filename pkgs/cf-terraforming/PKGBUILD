@@ -2,7 +2,7 @@
 pkgname='cf-terraforming'
 pkgver=0.7.4
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Command line utility to facilitate terraforming your existing Cloudflare resources'
 license=('Mozilla Public License 2.0')

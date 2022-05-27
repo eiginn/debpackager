@@ -2,7 +2,7 @@
 pkgname='arduino-cli'
 pkgver=0.22.0
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Arduino command line tool'
 license=('GNU General Public License v3.0')

@@ -2,7 +2,7 @@
 pkgname='tilt'
 pkgver=0.30.1
 pkgrel=1
-arch=('x86_64')
+arch=('amd64')
 depends=()
 pkgdesc='Define your dev environment as code. For microservice apps on Kubernetes.'
 license=('Apache License 2.0')
