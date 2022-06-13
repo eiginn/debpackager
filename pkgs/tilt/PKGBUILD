@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='tilt'
-pkgver=0.30.1
+pkgver=0.30.3
 pkgrel=1
 arch=('amd64')
 depends=()

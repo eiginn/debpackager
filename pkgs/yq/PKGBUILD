@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname=yq
-pkgver=4.25.1
+pkgver=4.25.2
 pkgrel=1
 arch=('amd64')
 depends=()

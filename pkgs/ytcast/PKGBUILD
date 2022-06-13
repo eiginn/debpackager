@@ -9,14 +9,14 @@ license=('MIT License')
 ghrepo='MarcoLucidi01/ytcast'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/FILLMEIN")
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/ytcast-v${pkgver}-linux-amd64.tar.gz")
 #noextract=("binary-linux-amd64")
 sha256sums=('SKIP')
 
 options=('!strip')
 
 package() {
-  #install -Dm 755 "${pkgname}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 755 "ytcast-v${pkgver}-linux-amd64/ytcast" "${pkgdir}/usr/bin/ytcast"
   #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
   #install -Dm 644 "${pkgname}.completion.zsh" "/usr/share/zsh/vendor-completions/_${pkgname}"
   #install -Dm 644 "${pkgname}.completion.bash" "/usr/share/bash-completion/completions/${pkgname}"

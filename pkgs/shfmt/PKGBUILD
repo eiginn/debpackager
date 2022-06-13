@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='shfmt'
-pkgver=3.5.0
+pkgver=3.5.1
 pkgrel=1
 arch=('amd64')
 depends=()
