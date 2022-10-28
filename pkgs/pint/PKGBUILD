@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='pint'
-pkgver=0.30.2
+pkgver=0.31.0
 pkgrel=1
 arch=('amd64')
 depends=()
@@ -9,7 +9,7 @@ license=('Apache License 2.0')
 ghrepo='cloudflare/pint'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/pint-${pkgver}-Linux-x86_64.tar.gz")
+source=("${url}/releases/download/v${pkgver}/pint-${pkgver}-linux-amd64.tar.gz")
 sha256sums=('SKIP')
 
 options=('!strip')
