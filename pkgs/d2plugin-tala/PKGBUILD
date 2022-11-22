@@ -1,0 +1,21 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='d2plugin-tala'
+pkgver=0.2.5
+pkgrel=1
+arch=('amd64')
+depends=()
+pkgdesc='A diagram layout engine designed specifically for software architecture diagrams'
+license=('Other')
+ghrepo='terrastruct/TALA'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/tala-v${pkgver}-linux-amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "tala-v${pkgver}/bin/d2plugin-tala" "${pkgdir}/usr/bin/d2plugin-tala"
+  install -Dm 644 "tala-v${pkgver}/man/d2plugin-tala.1" "${pkgdir}/usr/share/man/man1/d2plugin-tala.1"
+}
