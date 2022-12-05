@@ -1,0 +1,20 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='ecapture'
+pkgver=0.4.9
+pkgrel=1
+arch=('amd64')
+depends=()
+pkgdesc='capture SSL/TLS text content without CA cert using eBPF. supports Linux/Android  x86_64/Aarch64.'
+license=('Apache License 2.0')
+ghrepo='ehids/ecapture'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/ecapture-v${pkgver}-linux-x86_64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "ecapture-v${pkgver}-linux-x86_64/ecapture" "${pkgdir}/usr/bin/ecapture"
+}

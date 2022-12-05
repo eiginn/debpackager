@@ -1,0 +1,27 @@
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='tio'
+pkgver=2.4
+pkgrel=1
+arch=('amd64')
+depends=('meson')
+pkgdesc='A simple serial device I/O tool'
+license=('Other')
+ghrepo='tio/tio'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/tio-${pkgver}.tar.xz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  meson build
+  meson compile -C build
+}
+
+package() {
+  cd "${pkgname}-${pkgver}" && \
+    DESTDIR="$pkgdir" meson install -C build
+}
