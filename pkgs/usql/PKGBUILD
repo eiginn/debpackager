@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='usql'
-pkgver=0.12.13
+pkgver=0.13.1
 pkgrel=1
 arch=('amd64')
 depends=()
