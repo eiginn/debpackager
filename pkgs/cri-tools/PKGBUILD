@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='cri-tools'
-pkgver=1.25.0
+pkgver=1.26.0
 pkgrel=1
 arch=('amd64')
 depends=()
