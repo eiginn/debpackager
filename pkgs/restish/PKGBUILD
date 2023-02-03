@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='restish'
-pkgver=0.15.0
+pkgver=0.17.0
 pkgrel=1
 arch=('amd64')
 depends=()

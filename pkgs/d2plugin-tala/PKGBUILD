@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='d2plugin-tala'
-pkgver=0.2.5
+pkgver=0.2.14
 pkgrel=1
 arch=('amd64')
 depends=()
