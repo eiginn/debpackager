@@ -18,6 +18,6 @@ options=('!strip')
 package() {
   #install -Dm 755 "${pkgname}_linux_amd64" "${pkgdir}/usr/bin/${pkgname}"
   #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
-  #install -Dm 644 "${pkgname}.completion.zsh" "/usr/share/zsh/vendor-completions/_${pkgname}"
-  #install -Dm 644 "${pkgname}.completion.bash" "/usr/share/bash-completion/completions/${pkgname}"
+  #install -Dm 644 "${pkgname}.completion.zsh" "${pkgdir}/usr/share/zsh/vendor-completions/_${pkgname}"
+  #install -Dm 644 "${pkgname}.completion.bash" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
 }
