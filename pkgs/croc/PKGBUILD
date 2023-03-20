@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='croc'
-pkgver=9.6.3
+pkgver=9.6.4
 pkgrel=1
 arch=('amd64')
 depends=()
@@ -9,7 +9,7 @@ license=('MIT License')
 ghrepo='schollz/croc'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/croc_9.6.3_Linux-64bit.tar.gz")
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/croc_${pkgver}_Linux-64bit.tar.gz")
 #noextract=("binary-linux-amd64")
 sha256sums=('SKIP')
 
