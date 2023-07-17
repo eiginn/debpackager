@@ -1,6 +1,6 @@
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='receivemidi'
-pkgver=1.2.1
+pkgver=1.3.1
 pkgrel=1
 arch=('amd64')
 depends=()
