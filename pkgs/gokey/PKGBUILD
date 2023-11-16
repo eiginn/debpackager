@@ -1,0 +1,26 @@
+# shellcheck disable=SC2034
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='gokey'
+pkgver=0.1.2
+pkgrel=1
+arch=('amd64')
+depends=()
+pkgdesc='A simple vaultless password manager in Go'
+license=('BSD 3-Clause "New" or "Revised" License')
+ghrepo='cloudflare/gokey'
+url="https://github.com/${ghrepo}"
+
+source=("gokey::git+https://github.com/${ghrepo}/#tag=v${pkgver}")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+build() {
+  cd gokey
+  go build ./cmd/gokey
+}
+
+package() {
+  install -Dm 755 "gokey/gokey" "${pkgdir}/usr/bin/gokey"
+}
