@@ -1,6 +1,7 @@
+# shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname=yq
-pkgver=4.40.1
+pkgver=4.40.2
 pkgrel=1
 arch=('amd64')
 depends=()
