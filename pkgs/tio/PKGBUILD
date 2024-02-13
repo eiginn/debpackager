@@ -1,3 +1,4 @@
+# shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='tio'
 pkgver=2.7

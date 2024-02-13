@@ -1,0 +1,25 @@
+# shellcheck disable=SC2034
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='hurl'
+pkgver=4.2.0
+pkgrel=1
+arch=('amd64')
+depends=()
+pkgdesc='Hurl, run and test HTTP requests with plain text.'
+license=('Apache License 2.0')
+ghrepo='Orange-OpenSource/hurl'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/${pkgver}/hurl-${pkgver}-x86_64-unknown-linux-gnu.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  cd hurl-*-x86_64-unknown-linux-gnu || exit 1
+  install -Dm 755 "hurl" "${pkgdir}/usr/bin/hurl"
+  install -Dm 755 "hurlfmt" "${pkgdir}/usr/bin/hurlfmt"
+  install -Dm 644 "hurl.1.gz" "${pkgdir}/usr/share/man/man1/hurl.1.gz"
+  install -Dm 644 "hurlfmt.1.gz" "${pkgdir}/usr/share/man/man1/hurlfmt.1.gz"
+}
