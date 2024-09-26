@@ -1,0 +1,30 @@
+# shellcheck disable=SC2034
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='netcalc'
+pkgver=2.1.7
+pkgrel=1
+arch=('amd64')
+depends=()
+pkgdesc='Simplified clone of sipcalc with ipcalc looks'
+license=('BSD 3-Clause "New" or "Revised" License')
+ghrepo='troglobit/netcalc'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/netcalc-2.1.7.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+build() {
+  cd "${pkgname}-${pkgver}" || exit 1
+  ./configure --prefix=/usr
+  make -j5
+}
+
+package() {
+  install -Dm 755 "${pkgname}-${pkgver}/src/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 644 "${pkgname}-${pkgver}/${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+  #install -Dm 644 "${pkgname}.completion.zsh" "${pkgdir}/usr/share/zsh/vendor-completions/_${pkgname}"
+  #install -Dm 644 "${pkgname}.completion.bash" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+}

@@ -1,7 +1,8 @@
+# shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='age'
-pkgver=1.1.1
-ghpkgver=1.1.1
+pkgver=1.2.0
+ghpkgver=1.2.0
 pkgrel=1
 arch=('amd64')
 depends=()

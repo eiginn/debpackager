@@ -1,6 +1,7 @@
+# shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='pwru'
-pkgver=1.0.4
+pkgver=1.0.7
 pkgrel=1
 arch=('amd64')
 depends=()
