@@ -17,6 +17,9 @@ sha256sums=('SKIP')
 options=('!strip')
 
 package() {
+  install -Dm 644 "${startdir}/${pkgname/-/_}.service" "${pkgdir}/usr/lib/systemd/system/${pkgname/-/_}.service"
+  install -Dm 644 "${startdir}/${pkgname/-/_}.socket" "${pkgdir}/usr/lib/systemd/system/${pkgname/-/_}.socket"
+  install -Dm 644 "${startdir}/env" "${pkgdir}/etc/node_exporter/env"
   cd "node_exporter-${pkgver}.linux-amd64" || return 1
   install -Dm 755 "${pkgname/-/_}" "${pkgdir}/usr/bin/${pkgname/-/_}"
 }
