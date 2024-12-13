@@ -1,7 +1,7 @@
 # shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='shiori'
-pkgver=1.5.5
+pkgver=1.7.0
 pkgrel=1
 arch=('amd64')
 depends=()
@@ -10,7 +10,7 @@ license=('MIT License')
 ghrepo='go-shiori/shiori'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/shiori_Linux_x86_64.tar.gz")
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/shiori_Linux_x86_64_${pkgver}.tar.gz")
 #noextract=("binary-linux-amd64")
 sha256sums=('SKIP')
 
@@ -18,4 +18,5 @@ options=('!strip')
 
 package() {
   install -Dm 755 "shiori" "${pkgdir}/usr/bin/shiori"
+  install -Dm 644 "${startdir}/shiori.service" "${pkgdir}/usr/lib/systemd/user/shiori.service"
 }

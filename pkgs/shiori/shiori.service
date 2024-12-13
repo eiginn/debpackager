@@ -5,49 +5,15 @@ StartLimitBurst=4
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/shiori serve
+ExecStart=/usr/bin/shiori server -p 3100 -a 127.0.0.1
 Restart=on-failure
 RestartSec=1
+Environment=SHIORI_HTTP_SECRET_KEY=shiori
 
-RestrictAddressFamilies=AF_INET AF_INET6
-StateDirectory=shiori
-SystemCallErrorNumber=EPERM
-SystemCallFilter=@system-service
-SystemCallFilter=~@chown
-SystemCallFilter=~@keyring
-SystemCallFilter=~@memlock
-SystemCallFilter=~@setuid
-DeviceAllow=
-
-CapabilityBoundingSet=
-LockPersonality=true
+# Hardening
+SystemCallArchitectures=native
 MemoryDenyWriteExecute=true
 NoNewPrivileges=true
-PrivateDevices=true
-PrivateTmp=true
-ProtectControlGroups=true
-ProtectKernelTunables=true
-ProtectSystem=full
-ProtectClock=true
-ProtectKernelModules=true
-ProtectProc=noaccess
-ProtectHostname=true
-ProcSubset=pid
-RestrictNamespaces=true
-RestrictRealtime=true
-RestrictSUIDSGID=true
-SystemCallArchitectures=native
-SystemCallFilter=~@clock
-SystemCallFilter=~@debug
-SystemCallFilter=~@module
-SystemCallFilter=~@mount
-SystemCallFilter=~@raw-io
-SystemCallFilter=~@reboot
-SystemCallFilter=~@privileged
-SystemCallFilter=~@resources
-SystemCallFilter=~@cpu-emulation
-SystemCallFilter=~@obsolete
-UMask=0077
 
 [Install]
 WantedBy=default.target
