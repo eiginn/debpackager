@@ -1,7 +1,7 @@
 # shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='hurl'
-pkgver=6.1.1
+pkgver=7.0.0
 pkgrel=1
 arch=('amd64')
 depends=()
@@ -17,7 +17,7 @@ sha256sums=('SKIP')
 options=('!strip')
 
 package() {
-  cd hurl-*-x86_64-unknown-linux-gnu || exit 1
+  cd hurl-${pkgver}-x86_64-unknown-linux-gnu || exit 1
   install -Dm 755 "bin/hurl" "${pkgdir}/usr/bin/hurl"
   install -Dm 755 "bin/hurlfmt" "${pkgdir}/usr/bin/hurlfmt"
 

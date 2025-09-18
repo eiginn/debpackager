@@ -1,7 +1,7 @@
 # shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='pkl'
-pkgver=0.25.1
+pkgver=0.29.1
 pkgrel=1
 arch=('amd64')
 depends=()
