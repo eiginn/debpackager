@@ -1,23 +1,26 @@
 # shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
-pkgname='croc'
-pkgver=10.2.7
+pkgname='rqlite'
+pkgver=10.2.4
 pkgrel=1
 arch=('amd64')
 depends=()
-pkgdesc='Easily and securely send things from one computer to another :crocodile: :package:'
+pkgdesc='The lightweight, fault-tolerant database built on SQLite. Designed to keep your data highly available with minimal effort.'
 license=('MIT License')
-ghrepo='schollz/croc'
+ghrepo='rqlite/rqlite'
 url="https://github.com/${ghrepo}"
 
-source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/croc_v${pkgver}_Linux-64bit.tar.gz")
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/rqlite-v${pkgver}-linux-amd64.tar.gz")
 #noextract=("binary-linux-amd64")
 sha256sums=('SKIP')
 
 options=('!strip')
 
 package() {
-  install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  cd "rqlite-v${pkgver}-linux-amd64"
+  install -Dm 755 "rqbench" "${pkgdir}/usr/bin/rqbench"
+  install -Dm 755 "rqlite" "${pkgdir}/usr/bin/rqlite"
+  install -Dm 755 "rqlited" "${pkgdir}/usr/bin/rqlited"
   #install -Dm 644 "${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
   #install -Dm 644 "${pkgname}.completion.zsh" "${pkgdir}/usr/share/zsh/vendor-completions/_${pkgname}"
   #install -Dm 644 "${pkgname}.completion.bash" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"

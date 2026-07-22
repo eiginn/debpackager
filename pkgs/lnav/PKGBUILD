@@ -1,7 +1,7 @@
 # shellcheck disable=SC2034
 # Maintainer: Ryan Carter <ryan@frobozzelectric.org>
 pkgname='lnav'
-pkgver=0.13.1
+pkgver=0.13.2
 pkgrel=1
 arch=('amd64')
 depends=()
@@ -16,6 +16,9 @@ sha256sums=('SKIP')
 
 options=('!strip')
 
+build() {
+  unzip lnav*.zip
+}
 package() {
   cd "lnav-${pkgver}" || return 1
   install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"

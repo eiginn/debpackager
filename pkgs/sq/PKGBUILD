@@ -1,0 +1,25 @@
+# shellcheck disable=SC2034
+# Maintainer: Ryan Carter <ryan@frobozzelectric.org>
+pkgname='sq'
+pkgver=0.54.1
+pkgrel=1
+arch=('amd64')
+depends=()
+pkgdesc='sq data wrangler'
+license=('MIT License')
+ghrepo='neilotoole/sq'
+url="https://github.com/${ghrepo}"
+
+source=("https://github.com/${ghrepo}/releases/download/v${pkgver}/sq-${pkgver}-linux-amd64.tar.gz")
+#noextract=("binary-linux-amd64")
+sha256sums=('SKIP')
+
+options=('!strip')
+
+package() {
+  install -Dm 755 "sq" "${pkgdir}/usr/bin/sq"
+  install -Dm 644 "manpages/sq.1.gz" "${pkgdir}/usr/share/man/man1/sq.1.gz"
+  install -Dm 644 "completions/sq.zsh" "${pkgdir}/usr/share/zsh/vendor-completions/_sq"
+  install -Dm 644 "completions/sq.bash" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+  #install -Dm 644 "${pkgname}.service" "/usr/lib/systemd/system/${pkgname}.service"
+}
